@@ -12,7 +12,7 @@ table, th, td {
 </style>
 
 <meta charset="ISO-8859-1">
-<title>Panel de Productos</title>
+<title>Panel de Ventas</title>
 </head>
 <body>
 <h1>AGREGAR VENTA</h1>

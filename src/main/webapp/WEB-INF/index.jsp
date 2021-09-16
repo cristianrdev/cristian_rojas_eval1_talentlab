@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>ESTE ES EL INDEX</title>
+<title>TIENDA VIRTUAL</title>
 </head>
 <body>
 	<div>
