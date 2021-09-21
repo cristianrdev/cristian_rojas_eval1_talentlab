@@ -1,17 +1,25 @@
 package com.tiendavirtual.data.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+
 
 @Entity
 @Table(name="productos")
@@ -24,6 +32,18 @@ public class Producto {
 	private Float precio;
 	private String caracteristica;
 	private Long stock;
+	
+	
+	//relacion con ventas n a m
+	//relacion n a m
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name="productos_ventas", //nombre tabla intermedia
+	joinColumns = @JoinColumn(name="producto_id"),
+	inverseJoinColumns  = @JoinColumn(name = "venta_id"))
+	private List<Venta> ventas;
+	//Join table--> name; Joincolumns; inverseJoinColumns
+	
+
 	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -98,6 +118,7 @@ public class Producto {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+
 	
 	
 	

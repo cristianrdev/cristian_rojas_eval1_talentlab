@@ -6,8 +6,16 @@
 <html>
 <head>
 <style>
-table, th, td {
+table, th, td, form {
   border: 1px solid black;
+  }
+  
+ .forms {
+  background-color: #F0FFFF;
+  width: 25%;
+  padding: 10px;
+  
+}
 </style>
 <meta charset="ISO-8859-1">
 <title>Panel de Productos</title>
@@ -15,7 +23,7 @@ table, th, td {
 <body>
 <h1>AGREGAR PRODUCTOS</h1>
 					<a href="/">Atrás</a>
-				<form:form action="/producto/crear" method="post" modelAttribute="producto">
+				<form:form action="/producto/crear" method="post" modelAttribute="producto" class="forms">
 					<form:label path="nombre">Nombre:</form:label>
 					<form:input type="text" path="nombre" /><br>
 					
